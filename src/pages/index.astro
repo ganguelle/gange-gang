@@ -2,6 +2,7 @@
 import Footer from '../components/Footer.astro'
 import Header from '../components/Header.astro'
 import Page from '../components/Page.astro'
+import Tooltip from '../components/Tooltip.astro'
 ---
 
 <html lang='en'>
@@ -22,7 +23,12 @@ import Page from '../components/Page.astro'
     <Header />
 
     <Page color='rgb(58, 255, 80)'>
-      <h1 class='title'>Gange Gang</h1>
+      <Tooltip>
+        <h1 class='title' slot='content'>Gange Gang</h1>
+        <p slot='tooltip'>
+          <img src='/images/daedon.png' alt='Daedong' width='256' />
+        </p>
+      </Tooltip>
     </Page>
 
     <Page color='rgb(58, 81, 255)'>

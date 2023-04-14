@@ -1,0 +1,35 @@
+<div id='root'>
+  <div id='content'>
+    <slot name='content' />
+  </div>
+  <div id='tooltip'>
+    <slot name='tooltip' />
+  </div>
+</div>
+
+<style>
+  #tooltip {
+    transition: 0.5s ease;
+    position: fixed;
+    opacity: 0;
+  }
+
+  #root:hover #tooltip {
+    transition: 0.5s ease;
+    opacity: 1;
+  }
+
+  #root {
+    position: relative;
+    display: contents;
+  }
+</style>
+
+<script>
+  const tooltip = document.getElementById('tooltip')!
+  window.addEventListener('mousemove', (e) => {
+    e.preventDefault()
+    tooltip.style.top = `${e.clientY + 10}px`
+    tooltip.style.left = `${e.clientX + 10}px`
+  })
+</script>
