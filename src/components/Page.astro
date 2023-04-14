@@ -1,0 +1,16 @@
+---
+const { color } = Astro.props
+---
+
+<div>
+  <slot />
+</div>
+
+<style define:vars={{ color }}>
+  div {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    background-color: var(--color);
+  }
+</style>
